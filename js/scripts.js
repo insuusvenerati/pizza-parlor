@@ -24,9 +24,16 @@ Pizza.prototype.calculatePrice = function () {
 };
 
 function Order() {
+  /**
+   * @type {Pizza[]}
+   */
   this.pizzas = [];
 }
 
+/**
+ *
+ * @param {Pizza} pizza
+ */
 Order.prototype.addPizza = function (pizza) {
   this.pizzas.push(pizza);
 };
@@ -36,5 +43,23 @@ Order.prototype.calculateTotalPrice = function () {
   for (let i = 0; i < this.pizzas.length; i++) {
     totalPrice += this.pizzas[i].calculatePrice();
   }
-  return totalCost;
+  return `$${totalPrice.toPrecision(3)}`;
 };
+
+window.addEventListener("load", function () {
+  const order = new Order();
+
+  document.getElementById("addPizza").addEventListener("click", function () {
+    const size = document.querySelector('input[name="size"]:checked').value;
+    const toppings = Array.from(document.querySelectorAll('input[name="topping"]:checked')).map(
+      (topping) => topping.value
+    );
+    const pizza = new Pizza(size, toppings);
+    order.addPizza(pizza);
+    document.getElementById("totalCost").textContent = order.calculateTotalPrice();
+  });
+
+  document.getElementById("pizzaOrderForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+  });
+});

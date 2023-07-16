@@ -26,3 +26,7 @@ Pizza.prototype.calculatePrice = function () {
 function Order() {
   this.pizzas = [];
 }
+
+Order.prototype.addPizza = function (pizza) {
+  this.pizzas.push(pizza);
+};

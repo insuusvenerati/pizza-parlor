@@ -3,10 +3,53 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Pizza Parlor</title>
 		<link rel="stylesheet" href="css/styles.css" />
 	</head>
 	<body>
+		<h1>Pizza Parlor</h1>
+		<form id="pizzaOrderForm">
+			<fieldset>
+				<legend>Size:</legend>
+				<input type="radio" id="small" name="size" value="small" />
+				<label for="small">Small</label><br />
+				<input type="radio" id="medium" name="size" value="medium" />
+				<label for="medium">Medium</label><br />
+				<input type="radio" id="large" name="size" value="large" />
+				<label for="large">Large</label><br />
+			</fieldset>
+
+			<fieldset>
+				<legend>Toppings:</legend>
+				<input
+					type="checkbox"
+					id="cheese"
+					name="topping"
+					value="cheese"
+				/>
+				<label for="cheese">Cheese</label><br />
+				<input
+					type="checkbox"
+					id="pepperoni"
+					name="topping"
+					value="pepperoni"
+				/>
+				<label for="pepperoni">Pepperoni</label><br />
+				<input type="checkbox" id="ham" name="topping" value="ham" />
+				<label for="Ham">Ham</label><br />
+				<input
+					type="checkbox"
+					id="pineapple"
+					name="topping"
+					value="pineapple"
+				/>
+				<label for="pineapple">Pineapple</label><br />
+			</fieldset>
+			<button type="button" id="addPizza">Add Pizza</button>
+			<button type="submit">Place Order</button>
+		</form>
+		<p>Total Cost: <span id="totalCost"></span></p>
+
 		<script src="js/scripts.js"></script>
 	</body>
 </html>

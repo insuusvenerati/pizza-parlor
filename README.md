@@ -6,7 +6,7 @@ Test: "It should return a Pizza object with two properties for toppings and size
 Code: const myPizza = new Pizza("medium", ["anchovies", "pineapple"]);
 Expected Output: Pizza { toppings: ["anchovies", "pineapple"], size: "medium" }
 
-Describe: Pizza.prototype.calculateCost()
+Describe: Pizza.prototype.calculatePrice()
 
 Test: "It should calculate the cost of the pizza based on size and toppings"
 Code: const myPizza = new Pizza("medium", ["anchovies", "pineapple"]);
@@ -31,4 +31,4 @@ Test: "It should calculate the total cost of an order"
 Code: const myOrder = new Order();
 myOrder.addPizza(new Pizza("medium", ["anchovies", "pineapple"]));
 myOrder.addPizza(new Pizza("small", ["pepperoni"]));
-Expected Output: 13
+Expected Output: $13.50

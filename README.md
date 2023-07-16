@@ -17,3 +17,10 @@ Describe: Order()
 Test: "It should return an Order object with a property for pizzas"
 Code: const myOrder = new Order();
 Expected Output: Order { pizzas: [] }
+
+Describe: Order.prototype.addPizza()
+
+Test: "It should add a pizza to the pizzas property of an Order"
+Code: const myOrder = new Order();
+myOrder.addPizza(new Pizza("medium", ["anchovies", "pineapple"]));
+Expected Output: Order { pizzas: [Pizza { toppings: ["anchovies", "pineapple"], size: "medium" }] }

@@ -22,3 +22,7 @@ Pizza.prototype.calculatePrice = function () {
   const toppingsPrice = this.toppings.length * 0.5;
   return basePrice + toppingsPrice;
 };
+
+function Order() {
+  this.pizzas = [];
+}

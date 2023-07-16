@@ -25,7 +25,7 @@ Code: const myOrder = new Order();
 myOrder.addPizza(new Pizza("medium", ["anchovies", "pineapple"]));
 Expected Output: Order { pizzas: [Pizza { toppings: ["anchovies", "pineapple"], size: "medium" }] }
 
-Describe: Order.prototype.calculateTotal()
+Describe: Order.prototype.calculateTotalPrice()
 
 Test: "It should calculate the total cost of an order"
 Code: const myOrder = new Order();

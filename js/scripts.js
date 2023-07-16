@@ -30,3 +30,11 @@ function Order() {
 Order.prototype.addPizza = function (pizza) {
   this.pizzas.push(pizza);
 };
+
+Order.prototype.calculateTotalPrice = function () {
+  let totalPrice = 0;
+  for (let i = 0; i < this.pizzas.length; i++) {
+    totalPrice += this.pizzas[i].calculatePrice();
+  }
+  return totalCost;
+};
